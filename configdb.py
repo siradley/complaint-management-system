@@ -8,8 +8,8 @@ class ConnectionDatabase:
 		self._db.row_factory = sqlite3.Row
 		self._db.execute('create table if not exists complainTable(ID integer primary key autoincrement, FirstName varchar(255), LastName varchar(255), Address Text, Gender varchar(255), Comment text)')
 		self._db.commit()
-	def Add(self,firstname,lastname, telephone_no, email, address, gender,comment):
-		self._db.execute('insert into complainTable (FirstName, LastName, TelephoneNo, Email, Address, Gender, Comment) values (?,?,?,?,?)', (firstname, lastname, address, gender, comment))
+	def Add(self,firstname,lastname, address, gender,comment):
+		self._db.execute('insert into complainTable (FirstName, LastName, Address, Gender, Comment) values (?,?,?,?,?)', (firstname, lastname, address, gender, comment))
 		self._db.commit()
 		return 'Your complaint has been submitted.'
 	def ListRequest(self):
