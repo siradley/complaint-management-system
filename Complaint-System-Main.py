@@ -47,19 +47,16 @@ lastname.grid(row=1, column=1, columnspan=2)
 telephone_no = Entry(master, width=40, font=('Arial', 14))
 telephone_no.grid(row=2, column=1, columnspan=2)
 
-email = Entry(master, width=40, font=('Arial', 14))
-email.grid(row=3, column=1, columnspan=2)
-
 address = Entry(master, width=40, font=('Arial', 14))
 address.grid(row=4, column=1, columnspan=2)
 
 GenderGroup = StringVar(master, "1")
-Radiobutton(master, text='Male', value='male', variable=GenderGroup).grid(row=5, column=1)
-Radiobutton(master, text='Female', value='female', variable=GenderGroup).grid(row=5, column=2)
+Radiobutton(master, text='Male', value='male', variable=GenderGroup).grid(row=3, column=1)
+Radiobutton(master, text='Female', value='female', variable=GenderGroup).grid(row=3, column=2)
 
 
 comment = Text(master, width=40, height=8, font=('Arial', 14))
-comment.grid(row=6, column=1, columnspan=2, padx=10, pady=10)
+comment.grid(row=4, column=1, columnspan=2, padx=10, pady=10)
 
 def SaveData():
     message = conn.Add(firstname.get(), lastname.get(), address.get(), GenderGroup.get(), comment.get(1.0, 'end'))
